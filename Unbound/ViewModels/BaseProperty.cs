@@ -2,6 +2,7 @@
 
 namespace Unbound.ViewModels
 {
+    // Base event for INotifyPropertyChanged.
     public abstract class BaseProperty : INotifyPropertyChanged 
     {
         public event PropertyChangedEventHandler PropertyChanged;
