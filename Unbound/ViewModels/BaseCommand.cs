@@ -21,7 +21,7 @@ namespace Unbound.ViewModels
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            _task();
         }
     }
 }
