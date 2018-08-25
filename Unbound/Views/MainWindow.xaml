@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="378.161" Width="586.686">
     <Grid>
-        <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg"/>
+        <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"  ZoomLevel="3.5"/>
     </Grid>
 </Window>
