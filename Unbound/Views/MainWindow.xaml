@@ -6,8 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Unbound"
         mc:Ignorable="d"
-        Title="MainWindow" Height="378.161" Width="586.686">
+        Title="Unbound - The Earth At Your Fingertips!" Height="450" Width="586.686">
     <Grid>
-        <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"  ZoomLevel="3.5"/>
+        <StackPanel Margin="0,0,0,-61.2">
+            <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
+            <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
+
+        </StackPanel>
+        <Grid Margin="0,55,0,9.8">
+            <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"  ZoomLevel="3.5" Margin="0,0,0,0.2"/>
+        </Grid>
     </Grid>
 </Window>
