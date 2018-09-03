@@ -8,13 +8,23 @@
         mc:Ignorable="d"
         Title="Unbound - The Earth At Your Fingertips!" Height="450" Width="586.686">
     <Grid>
+        
         <StackPanel Margin="0,0,0,-61.2">
+            
             <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
             <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
 
+            <TextBlock Text="Choose Map:" Padding="5" FontWeight="Bold" />
+            <ComboBox Name="cmbMapType" Margin="5,0,425,0" Height="22" >
+                <ComboBoxItem>Aerial</ComboBoxItem>
+                <ComboBoxItem>AerialWithLabels</ComboBoxItem>
+                <ComboBoxItem>Road</ComboBoxItem>
+            </ComboBox>
+
+            <Grid Margin="0,25,0,9.8">
+                <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"
+                       Mode="Road" x:Name="unboundMap" ZoomLevel="3.5" Margin="0,0,0,-311"/>
+            </Grid>
         </StackPanel>
-        <Grid Margin="0,55,0,9.8">
-            <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"  ZoomLevel="3.5" Margin="0,0,0,0.2"/>
-        </Grid>
     </Grid>
 </Window>
