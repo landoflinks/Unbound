@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="ViewModels\BaseCommand.cs" />
     <Compile Include="ViewModels\BaseProperty.cs" />
+    <Compile Include="ViewModels\MapActions.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

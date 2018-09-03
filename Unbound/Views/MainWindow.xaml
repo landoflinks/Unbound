@@ -9,7 +9,9 @@
         mc:Ignorable="d"
         Title="Unbound - The Earth At Your Fingertips!" Height="450" Width="586.686">
 
-    
+    <Window.DataContext>
+        <ViewModels:MapActions />
+    </Window.DataContext>
     
     <Grid>
         
