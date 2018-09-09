@@ -9,23 +9,15 @@ namespace Unbound.ViewModels
 {
     public class MapActions : BaseProperty
     {
-        private void ChangeMapMode(Map name, string mapMode)
+        //private Map _mainMap;
+
+        private void RoadMode(Map mapName)
         {
-            switch (mapMode)
-            {
-                case "Aerial":
-                    name.Mode = new AerialMode(false);
-                    break;
-                case "AerialWithLabels":
-                    name.Mode = new AerialMode(true);
-                    break;
-                case "Road":
-                    name.Mode = new RoadMode();
-                    break;
-                default:
-                    name.Mode = new RoadMode();
-                    break;
-            }
+            mapName.Mode = new RoadMode();
+        }
+        private void AerialMode(Map mapName)
+        {
+            mapName.Mode = new AerialMode(true);
         }
     }
 }

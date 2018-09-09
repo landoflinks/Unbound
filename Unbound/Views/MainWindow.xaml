@@ -20,12 +20,19 @@
             <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
             <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
 
-            <TextBlock Text="Choose Map:" Padding="5" FontWeight="Bold" />
-            <ComboBox Name="cmbMapType" Margin="5,0,425,0" Height="22" >
-                <ComboBoxItem>Aerial</ComboBoxItem>
-                <ComboBoxItem>AerialWithLabels</ComboBoxItem>
-                <ComboBoxItem>Road</ComboBoxItem>
-            </ComboBox>
+            <StackPanel HorizontalAlignment="Left">
+                <TextBlock Text="Choose Map:" Padding="5" FontWeight="Bold" />
+                <RadioButton x:Name="RoadRadioButton" Margin="5 0 0 0" Width="100" Command="{Binding ElementName=unboundMap RoadMode}">
+                    <RadioButton.Content>
+                        <TextBlock Text="Road" TextWrapping="Wrap"/>
+                    </RadioButton.Content>
+                </RadioButton>
+                <RadioButton x:Name="AerialRadioButton" Margin="5 0 0 0" Width="100" Command="{Binding ElementName=unboundMap AerialMode}">
+                    <RadioButton.Content>
+                        <TextBlock Text="Satellite" TextWrapping="Wrap"/>
+                    </RadioButton.Content>
+                </RadioButton>
+            </StackPanel>
 
             <Grid Margin="0,25,0,9.8">
                 <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"
