@@ -1,23 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Input;
 using Microsoft.Maps.MapControl.WPF;
 
 namespace Unbound.ViewModels
 {
     public class MapActions : BaseProperty
     {
-        //private Map _mainMap;
+        Map _mapName;
 
-        private void RoadMode(Map mapName)
+        private void RoadMode()
         {
-            mapName.Mode = new RoadMode();
+            _mapName.Mode = new RoadMode();
         }
-        private void AerialMode(Map mapName)
+        private void AerialMode()
         {
-            mapName.Mode = new AerialMode(true);
+            _mapName.Mode = new AerialMode(true);
         }
+        public ICommand RoadMap
+        {
+            get { return new BaseCommand(RoadMode); }
+        }
+
+        public ICommand AerialMap
+        {
+            get { return new BaseCommand(AerialMode); }
+        }
+
     }
 }
