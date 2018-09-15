@@ -1,12 +1,14 @@
 ﻿using System.Windows.Input;
 using Microsoft.Maps.MapControl.WPF;
+using Unbound.Models;
 
 namespace Unbound.ViewModels
 {
     public class MapActions : BaseProperty
     {
-        Map _mapName;
-
+        MapInfo mapData = new MapInfo();
+        private readonly Map _mapName = mapData.name;
+         
         private void RoadMode()
         {
             _mapName.Mode = new RoadMode();
