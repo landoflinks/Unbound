@@ -4,6 +4,11 @@ namespace Unbound.Models
 {
     public class MapInfo
     {
-        public Map name { get; set; }
+        public Map Name { get; set; }
+
+        public MapInfo() // Default constructor.
+        {
+            return;
+        }
     }
 }

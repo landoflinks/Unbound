@@ -6,8 +6,8 @@ namespace Unbound.ViewModels
 {
     public class MapActions : BaseProperty
     {
-        MapInfo mapData = new MapInfo();
-        private readonly Map _mapName = mapData.name;
+
+        private readonly Map _mapName;
          
         private void RoadMode()
         {
