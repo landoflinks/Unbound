@@ -17,12 +17,12 @@
 
             <StackPanel HorizontalAlignment="Left">
                 <TextBlock Text="Choose Map:" Padding="5" FontWeight="Bold" />
-                <RadioButton x:Name="RoadRadioButton" Margin="5 0 0 0" Width="100" Command="{Binding ElementName=unboundMap RoadMode}">
+                <RadioButton x:Name="RoadRadioButton" Margin="5 0 0 0" Width="100">
                     <RadioButton.Content>
                         <TextBlock Text="Road" TextWrapping="Wrap"/>
                     </RadioButton.Content>
                 </RadioButton>
-                <RadioButton x:Name="AerialRadioButton" Margin="5 0 0 0" Width="100" Command="{Binding ElementName=unboundMap AerialMode}">
+                <RadioButton x:Name="AerialRadioButton" Margin="5 0 0 0" Width="100">
                     <RadioButton.Content>
                         <TextBlock Text="Satellite" TextWrapping="Wrap"/>
                     </RadioButton.Content>
