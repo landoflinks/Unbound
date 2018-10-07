@@ -7,31 +7,25 @@
         xmlns:local="clr-namespace:Unbound"
         mc:Ignorable="d"
         Title="Unbound - The Earth At Your Fingertips!" Height="450" Width="586.686">
-    
+
     <Grid>
-        
+
         <StackPanel Margin="0,0,0,-61.2">
-            
+
             <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
             <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
 
-            <StackPanel HorizontalAlignment="Left">
-                <TextBlock Text="Choose Map:" Padding="5" FontWeight="Bold" />
-                <RadioButton x:Name="RoadRadioButton" Margin="5 0 0 0" Width="100">
-                    <RadioButton.Content>
-                        <TextBlock Text="Road" TextWrapping="Wrap"/>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton x:Name="AerialRadioButton" Margin="5 0 0 0" Width="100">
-                    <RadioButton.Content>
-                        <TextBlock Text="Satellite" TextWrapping="Wrap"/>
-                    </RadioButton.Content>
-                </RadioButton>
-            </StackPanel>
 
             <Grid Margin="0,25,0,9.8">
                 <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"
                        Mode="Road" x:Name="unboundMap" ZoomLevel="3.5" Margin="0,0,0,-311"/>
+
+                <Button x:Name="btn_mapChange" Width="80" Opacity="0.4" HorizontalAlignment="Left" Margin="5,5,0,0" 
+                        Background="#FFE8DBDB" Height="19" VerticalAlignment="Top" Click="btn_mapChange_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect> Change Map
+                </Button>
             </Grid>
         </StackPanel>
     </Grid>

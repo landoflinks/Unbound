@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace Unbound
 {
@@ -7,6 +8,18 @@ namespace Unbound
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_mapChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (unboundMap.Mode.ToString() == "Microsoft.Maps.MapControl.WPF.RoadMode")
+            {
+                unboundMap.Mode = new AerialMode(true);
+            }
+            else
+            {
+                unboundMap.Mode = new RoadMode();
+            }
         }
     }
 }
