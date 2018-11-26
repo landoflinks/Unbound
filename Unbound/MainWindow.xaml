@@ -24,7 +24,7 @@
                         Background="#FFE8DBDB" Height="19" VerticalAlignment="Top" Click="btn_mapChange_Click">
                     <Button.Effect>
                         <DropShadowEffect/>
-                    </Button.Effect> Change Map
+                    </Button.Effect> Satellite
                 </Button>
             </Grid>
         </StackPanel>

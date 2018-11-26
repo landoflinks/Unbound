@@ -15,10 +15,12 @@ namespace Unbound
             if (unboundMap.Mode.ToString() == "Microsoft.Maps.MapControl.WPF.RoadMode")
             {
                 unboundMap.Mode = new AerialMode(true);
+                btn_mapChange.Content = "Road";
             }
             else
             {
                 unboundMap.Mode = new RoadMode();
+                btn_mapChange.Content = "Satellite";
             }
         }
     }
