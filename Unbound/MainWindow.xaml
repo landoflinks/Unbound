@@ -7,6 +7,14 @@
         xmlns:local="clr-namespace:Unbound"
         mc:Ignorable="d"
         Title="Unbound - The Earth At Your Fingertips!" Height="450" Width="586.686">
+    
+    <Window.Resources>
+        <!--Button Colors-->
+        <Color x:Key="ButtonNormalColor">#FFE8DBDB</Color>
+        <Color x:Key="ButtonMouseOverColor">#FF908C8C</Color>
+        <Color x:Key="ButtonPressedColor">#FFB4ADAD</Color>
+        
+    </Window.Resources>
 
     <Grid>
 
