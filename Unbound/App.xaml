@@ -4,6 +4,23 @@
              xmlns:local="clr-namespace:Unbound"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="DefaultButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12px"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
+            <Setter Property="Background" Value="#FFE8DBDB" />
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                        <GradientStop Color="#FFE8DBDB" Offset="1"/>
+                        <GradientStop Color="Orange" Offset="0.85"/>
+                        <GradientStop Color="#FFFFD190" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
