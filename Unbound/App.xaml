@@ -4,21 +4,28 @@
              xmlns:local="clr-namespace:Unbound"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="DefaultButton" TargetType="Button">
-            <Setter Property="OverridesDefaultStyle" Value="True"/>
-            <Setter Property="Margin" Value="2"/>
-            <Setter Property="FontFamily" Value="Segoe UI"/>
-            <Setter Property="FontSize" Value="12px"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
-            <Setter Property="Background" Value="#FFE8DBDB" />
-            <Setter Property="Background" >
+        <LinearGradientBrush x:Key="GrayButton"   
+        StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkGray" Offset="0" />
+            <GradientStop Color="#FFE8DBDB" Offset="0.5" />
+            <GradientStop Color="DarkGray" Offset="1" />
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource GrayButton}" />
+            <Setter Property="MinWidth" Value="80" />
+            <Setter Property="MinHeight" Value="20" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Opacity" Value="0.4" />
+            <Setter Property="Template">
                 <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
-                        <GradientStop Color="#FFE8DBDB" Offset="1"/>
-                        <GradientStop Color="Orange" Offset="0.85"/>
-                        <GradientStop Color="#FFFFD190" Offset="1"/>
-                    </LinearGradientBrush>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle Margin="2"
+                            StrokeThickness="1"
+                            Stroke="#60000000"
+                            StrokeDashArray="1 2" />
+                        </Border>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
