@@ -16,16 +16,27 @@
             <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
 
 
-            <Grid Margin="0,25,0,9.8">
+            <Grid Margin="0,25,0,1">
                 <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"
                        Mode="Road" x:Name="unboundMap" ZoomLevel="3.5" Margin="0,0,0,-311"/>
 
-                <Button x:Name="btn_mapChange" Width="80" Opacity="0.4" HorizontalAlignment="Left" Margin="5,5,0,0" 
-                        Background="#FFE8DBDB" Height="19" VerticalAlignment="Top" Click="btn_mapChange_Click">
-                    <Button.Effect>
-                        <DropShadowEffect/>
-                    </Button.Effect> Satellite
-                </Button>
+                <Grid Height="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button x:Name="btn_mapChange" Width="80" HorizontalAlignment="Left" Margin="5,0,0,0"
+                    VerticalAlignment="Top" Click="btn_mapChange_Click" Grid.Column="0">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect> Satellite
+                    </Button>
+                </Grid>
             </Grid>
         </StackPanel>
     </Grid>

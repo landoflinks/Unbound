@@ -3,31 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Unbound"
              StartupUri="MainWindow.xaml">
+    <!-- Button Template -->
     <Application.Resources>
-        <LinearGradientBrush x:Key="GrayButton"   
-        StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="DarkGray" Offset="0" />
-            <GradientStop Color="#FFE8DBDB" Offset="0.5" />
-            <GradientStop Color="DarkGray" Offset="1" />
+        <LinearGradientBrush x:Key="GrayButton"
+            EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE8DBDB" Offset="0"/>
+            <GradientStop Color="DarkGray" Offset="1"/>
         </LinearGradientBrush>
-        <Style TargetType="{x:Type Button}">
+        <Style x:Key="ButtonTemplate" TargetType="Button">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
             <Setter Property="Background" Value="{StaticResource GrayButton}" />
             <Setter Property="MinWidth" Value="80" />
             <Setter Property="MinHeight" Value="20" />
             <Setter Property="Margin" Value="5" />
-            <Setter Property="Opacity" Value="0.4" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Border>
-                            <Rectangle Margin="2"
-                            StrokeThickness="1"
-                            Stroke="#60000000"
-                            StrokeDashArray="1 2" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="Opacity" Value="0.6" />
         </Style>
     </Application.Resources>
 </Application>
