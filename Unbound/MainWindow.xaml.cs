@@ -8,14 +8,11 @@ namespace Unbound
         public MainWindow()
         {
             InitializeComponent();
-
-            // Sets focus on map (Allows use of +/- keys).
-            unboundMap.Focus();
         }
 
+        // Switches between map layers.
         private void btn_mapChange_Click(object sender, RoutedEventArgs e)
         {
-            // Switch between map types.
             if (unboundMap.Mode.ToString() == "Microsoft.Maps.MapControl.WPF.RoadMode")
             {
                 // Switch to Aerial/Satellite map with labels.
@@ -28,6 +25,18 @@ namespace Unbound
                 unboundMap.Mode = new RoadMode();
                 btn_mapChange.Content = "Satellite";
             }
+        }
+
+        // Manually zooms the map inward.
+        private void btn_zoomIn_Click(object sender, RoutedEventArgs e)
+        {
+            unboundMap.ZoomLevel += 1;
+        }
+
+        // Manually zooms the map outward.
+        private void btn_zoomOut_Click(object sender, RoutedEventArgs e)
+        {
+            unboundMap.ZoomLevel -= 1;
         }
     }
 }

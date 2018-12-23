@@ -12,11 +12,13 @@
 
         <StackPanel Margin="0,0,0,-61.2">
 
+            <!-- Search Bar -->
             <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
             <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
 
 
             <Grid Margin="0,25,0,1">
+                <!-- Main map object -->
                 <m:Map CredentialsProvider="AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg" Center="37.806029,-100.407007"
                        Mode="Road" x:Name="unboundMap" ZoomLevel="3.5" Margin="0,0,0,-311"/>
 
@@ -30,11 +32,28 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     
+                    <!-- Map Orientation Button -->
                     <Button x:Name="btn_mapChange" Width="80" HorizontalAlignment="Left" Margin="5,0,0,0"
                     VerticalAlignment="Top" Click="btn_mapChange_Click" Grid.Column="0">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> Satellite
+                    </Button>
+
+                    <!-- Zoom In Button -->
+                    <Button x:Name="btn_zoomIn" Width="20" HorizontalAlignment="Left" Margin="20,0,0,0"
+                    VerticalAlignment="Top" Click="btn_zoomIn_Click" Grid.Column="5">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect> +
+                    </Button>
+
+                    <!-- Zoom Out Button -->
+                    <Button x:Name="btn_zoomOut" Width="20" HorizontalAlignment="Right" Margin="0,0,20,0"
+                    VerticalAlignment="Top" Click="btn_zoomOut_Click" Grid.Column="5">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect> -
                     </Button>
                 </Grid>
             </Grid>
