@@ -12,10 +12,19 @@
 
         <StackPanel Margin="0,0,0,-61.2">
 
-            <!-- Search Bar -->
-            <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" />
-            <TextBox x:Name="SearchTextBox" Margin="5,0,225,0" Background="white" Height="22" />
+            <!-- Search Bar Label -->
+            <TextBlock Text="Search Location" Padding="5" FontWeight="Bold" Grid.Column="0" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
+                <!-- Search Bar -->
+                <TextBox x:Name="SearchTextBox" Margin="5,0,0,0" Background="white" Height="22" Grid.Column="0" />
+                <Button x:Name="btn_find" Margin="10,0,0,0" Width="40" HorizontalAlignment="Left"
+                   Click="Btn_zoomIn_Click" Grid.Column="1">Find</Button>
+            </Grid>
 
             <Grid Margin="0,25,0,1">
                 <!-- Main map object -->
@@ -34,7 +43,7 @@
                     
                     <!-- Map Orientation Button -->
                     <Button x:Name="btn_mapChange" Width="80" HorizontalAlignment="Left" Margin="5,0,0,0"
-                    VerticalAlignment="Top" Click="btn_mapChange_Click" Grid.Column="0">
+                    VerticalAlignment="Top" Click="Btn_mapChange_Click" Grid.Column="0">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> Satellite
@@ -42,7 +51,7 @@
 
                     <!-- Zoom In Button -->
                     <Button x:Name="btn_zoomIn" Width="20" HorizontalAlignment="Left" Margin="20,0,0,0"
-                    VerticalAlignment="Top" Click="btn_zoomIn_Click" Grid.Column="5">
+                    VerticalAlignment="Top" Click="Btn_zoomIn_Click" Grid.Column="5">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> +
@@ -50,7 +59,7 @@
 
                     <!-- Zoom Out Button -->
                     <Button x:Name="btn_zoomOut" Width="20" HorizontalAlignment="Right" Margin="0,0,20,0"
-                    VerticalAlignment="Top" Click="btn_zoomOut_Click" Grid.Column="5">
+                    VerticalAlignment="Top" Click="Btn_zoomOut_Click" Grid.Column="5">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> -
