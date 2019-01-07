@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Windows;
 using System.Xml;
 using Microsoft.Maps.MapControl.WPF;
@@ -41,19 +42,36 @@ namespace Unbound
             unboundMap.ZoomLevel -= 1;
         }
 
-        // Returns the latitude/longitude for a location.
-        private void MapSearch()
+        // Geocodes an address and finds its lat/long.
+        public XmlDocument FindCoords(string address)
         {
-            string address;
             string mapKey = "AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg";
 
-            address = SearchTextBox.Text;
-
-            //Send REST request using the Microsoft Locations API.
+            // Create a REST geocode request using the MS Locations API.
             string request = "http://dev.virtualearth.net/REST/v1/Locations/" + address + "?o=xml&key=" + mapKey;
 
-            //Grab the response.
-            //XmlDocument response = GetXmlResponse(request);
+            // Send the request.
+            XmlDocument response = GetResponse(request);
+
+            MessageBox.Show(response.ToString());
+
+            return (response);
+        }
+
+        // Submit the REST geocode request and grab a response.
+        private XmlDocument GetResponse(string url)
+        {
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            {
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception(String.Format("Server error (HTTP {0}: {1}).",
+                    response.StatusCode,
+                    response.StatusDescription));
+                XmlDocument document = new XmlDocument();
+                document.Load(response.GetResponseStream());
+                return document;
+            }
         }
     }
 }

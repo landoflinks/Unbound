@@ -23,7 +23,7 @@
                 <!-- Search Bar -->
                 <TextBox x:Name="SearchTextBox" Margin="5,0,0,0" Background="white" Height="22" Grid.Column="0" />
                 <Button x:Name="btn_find" Margin="10,0,0,0" Width="40" HorizontalAlignment="Left"
-                   Click="Btn_zoomIn_Click" Grid.Column="1">Find</Button>
+                   Command="{Binding Path=FindCoords}" Grid.Column="1">Find</Button>
             </Grid>
 
             <Grid Margin="0,25,0,1">
@@ -43,7 +43,7 @@
                     
                     <!-- Map Orientation Button -->
                     <Button x:Name="btn_mapChange" Width="80" HorizontalAlignment="Left" Margin="5,0,0,0"
-                    VerticalAlignment="Top" Click="Btn_mapChange_Click" Grid.Column="0">
+                    VerticalAlignment="Top" Command="{Binding Path=Btn_mapChange_Click}" Grid.Column="0">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> Satellite
