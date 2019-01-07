@@ -42,9 +42,21 @@ namespace Unbound
             unboundMap.ZoomLevel -= 1;
         }
 
-        // Geocodes an address and finds its lat/long.
-        public XmlDocument FindCoords(string address)
+        // Accesses the FindCoords and GetResponse methods to do a successful map search.
+        // This is temporary until bindings can be better implemented.
+        private void Btn_find_Click(object sender, RoutedEventArgs e)
         {
+            XmlDocument coords; 
+
+            coords = FindCoords();
+
+            //unboundMap.Center = coords;
+        }
+
+        // Geocodes an address and finds its lat/long.
+        public XmlDocument FindCoords()
+        {
+            string address = SearchTextBox.Text;
             string mapKey = "AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg";
 
             // Create a REST geocode request using the MS Locations API.
@@ -52,8 +64,6 @@ namespace Unbound
 
             // Send the request.
             XmlDocument response = GetResponse(request);
-
-            MessageBox.Show(response.ToString());
 
             return (response);
         }

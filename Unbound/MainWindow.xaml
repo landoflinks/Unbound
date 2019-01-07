@@ -23,7 +23,7 @@
                 <!-- Search Bar -->
                 <TextBox x:Name="SearchTextBox" Margin="5,0,0,0" Background="white" Height="22" Grid.Column="0" />
                 <Button x:Name="btn_find" Margin="10,0,0,0" Width="40" HorizontalAlignment="Left"
-                   Command="{Binding Path=FindCoords}" Grid.Column="1">Find</Button>
+                   Click="Btn_find_Click" Grid.Column="1">Find</Button>
             </Grid>
 
             <Grid Margin="0,25,0,1">
