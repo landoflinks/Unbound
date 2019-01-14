@@ -43,7 +43,7 @@
                     
                     <!-- Map Orientation Button -->
                     <Button x:Name="btn_mapChange" Width="80" HorizontalAlignment="Left" Margin="5,0,0,0"
-                    VerticalAlignment="Top" Command="{Binding Path=Btn_mapChange_Click}" Grid.Column="0">
+                    VerticalAlignment="Top" Click="Btn_mapChange_Click"  Grid.Column="0">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect> Satellite

@@ -48,7 +48,10 @@ namespace Unbound
         {
             XmlDocument coords; 
 
+            // Send the request for the coordinates.
             coords = FindCoords();
+
+            // Grab the coordinates from the returned XML.
 
             //unboundMap.Center = coords;
         }
@@ -60,7 +63,7 @@ namespace Unbound
             string mapKey = "AlUeSTQVv9GwuYMLV1Iyp3aiOgetXonrVPy8lFwNo5OBNqYQkKudpzbPm7FbURCg";
 
             // Create a REST geocode request using the MS Locations API.
-            string request = "http://dev.virtualearth.net/REST/v1/Locations/" + address + "?o=xml&key=" + mapKey;
+            string request = "http://dev.virtualearth.net/REST/v1/Locations/" + address + "?o=xml&maxResults=10&key=" + mapKey;
 
             // Send the request.
             XmlDocument response = GetResponse(request);
