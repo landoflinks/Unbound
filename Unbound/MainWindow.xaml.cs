@@ -46,14 +46,19 @@ namespace Unbound
         // This is temporary until bindings can be better implemented.
         private void Btn_find_Click(object sender, RoutedEventArgs e)
         {
-            XmlDocument coords; 
+            XmlDocument coords;
+            Location destination = new Location();
 
             // Send the request for the coordinates.
             coords = FindCoords();
 
-            // Grab the coordinates from the returned XML.
+             // Parse out Latitude.
+             destination.Latitude = ParseLatLong(coords.InnerXml, "Latitude");
 
-            //unboundMap.Center = coords;
+             // Parse out Longitude.
+             destination.Longitude = ParseLatLong(coords.InnerXml, "Longitude");
+
+            unboundMap.SetView(destination, 14);
         }
 
         // Geocodes an address and finds its lat/long.
@@ -85,6 +90,16 @@ namespace Unbound
                 document.Load(response.GetResponseStream());
                 return document;
             }
+        }
+
+        // Parse the provided coordinate string out of the document.
+        private double ParseLatLong(string document, string coordinate)
+        {
+            int start = document.LastIndexOf("<" + coordinate + ">") + ("<" + coordinate + ">").Length;
+            int end = document.LastIndexOf("</" + coordinate + ">");
+            string data = document.Substring(start, end - start);
+
+            return Convert.ToDouble(data);
         }
     }
 }
