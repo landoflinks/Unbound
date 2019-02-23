@@ -30,18 +30,6 @@ namespace Unbound
             }
         }
 
-        // Manually zooms the map inward.
-        private void Btn_zoomIn_Click(object sender, RoutedEventArgs e)
-        {
-            unboundMap.ZoomLevel += 1;
-        }
-
-        // Manually zooms the map outward.
-        private void Btn_zoomOut_Click(object sender, RoutedEventArgs e)
-        {
-            unboundMap.ZoomLevel -= 1;
-        }
-
         // Accesses the FindCoords and GetResponse methods to do a successful map search.
         // This is temporary until bindings can be better implemented.
         private void Btn_find_Click(object sender, RoutedEventArgs e)
