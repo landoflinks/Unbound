@@ -30,6 +30,7 @@ namespace Unbound
             }
         }
 
+        #region Find Button
         // Accesses the FindCoords and GetResponse methods to do a successful map search.
         // This is temporary until bindings can be better implemented.
         private void Btn_find_Click(object sender, RoutedEventArgs e)
@@ -49,6 +50,7 @@ namespace Unbound
             unboundMap.SetView(destination, 14);
         }
 
+        #region FindCoords
         // Geocodes an address and finds its lat/long.
         public XmlDocument FindCoords()
         {
@@ -63,7 +65,9 @@ namespace Unbound
 
             return (response);
         }
+        #endregion
 
+        #region GetResponse
         // Submit the REST geocode request and grab a response.
         private XmlDocument GetResponse(string url)
         {
@@ -79,7 +83,9 @@ namespace Unbound
                 return document;
             }
         }
+        #endregion
 
+        #region ParseLatLong
         // Parse the provided coordinate string out of the document.
         private double ParseLatLong(string document, string coordinate)
         {
@@ -89,5 +95,7 @@ namespace Unbound
 
             return Convert.ToDouble(data);
         }
+        #endregion
+        #endregion
     }
 }
