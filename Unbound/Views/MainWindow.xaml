@@ -46,7 +46,7 @@
                     VerticalAlignment="Top" Click="Btn_mapChange_Click"  Grid.Column="0">
                         <Button.Effect>
                             <DropShadowEffect/>
-                        </Button.Effect> Satellite
+                        </Button.Effect> Aerial
                     </Button>
 
                     <!-- Map Zoom Bar -->

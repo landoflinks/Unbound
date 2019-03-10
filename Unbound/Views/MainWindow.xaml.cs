@@ -26,7 +26,7 @@ namespace Unbound
             {
                 // Switch to the standard road map.
                 unboundMap.Mode = new RoadMode();
-                btn_mapChange.Content = "Satellite";
+                btn_mapChange.Content = "Aerial";
             }
         }
 
