@@ -18,13 +18,25 @@ namespace Unbound.Models
         public UnboundModel(Map map)
         {
             Map = map;
-            //LoadMap();
+            LoadMap();
         }
 
+        // Initializes the map.
         private void LoadMap()
         {
             Map.Mode = new RoadMode();
             Map.ZoomLevel = 4;
+        }
+
+        // Switches between the road and satellite map modes.
+        public MapMode ChangeMap()
+        {
+            if (Map.Mode is RoadMode)
+                Map.Mode = new AerialMode(true);
+            else
+                Map.Mode = new RoadMode();
+
+            return Map.Mode;
         }
     }
 }
