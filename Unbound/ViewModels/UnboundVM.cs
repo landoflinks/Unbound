@@ -13,5 +13,31 @@ namespace Unbound.ViewModels
         private string locationSearch;
         private string selectedMapMode;
         private bool appIsSearching;
+
+        public string MapKeyKey
+        {
+            get { return unboundModel.Key; }
+        }
+
+       /* public Map MapObject
+        {
+            get { return mapObject; }
+            set
+            {
+                mapObject = new UnboundModel();
+
+                Zoom = mapObject.Map.ZoomLevel;
+            }
+        } */
+
+        public string SelectedMapMode
+        {
+            get { return selectedMapMode; }
+        }
+
+        public double Zoom
+        {
+            get { return zoom; }
+        }
     }
 }
