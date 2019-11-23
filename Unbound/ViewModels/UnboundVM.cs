@@ -7,10 +7,8 @@ namespace Unbound.ViewModels
 {
     class UnboundVM : BaseVM
     {
-        private Map mapObject;
         private UnboundModel unboundModel;
         private double zoom;
-        private string locationSearch;
         private string selectedMapMode;
         private bool appIsSearching;
 
@@ -18,17 +16,6 @@ namespace Unbound.ViewModels
         {
             get { return unboundModel.Key; }
         }
-
-       /* public Map MapObject
-        {
-            get { return mapObject; }
-            set
-            {
-                mapObject = new UnboundModel();
-
-                Zoom = mapObject.Map.ZoomLevel;
-            }
-        } */
 
         public string SelectedMapMode
         {
